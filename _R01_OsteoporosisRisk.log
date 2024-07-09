@@ -1,0 +1,216 @@
+2024-07-09 16:20:20,950 - INFO - Classification pipeline is started (Binary - Osteoporosis Risk)
+2024-07-09 16:20:27,318 - INFO - Class distribution after the data preparation stage:
+Train: 
+OP
+0    678
+1    397
+Name: count, dtype: int64
+Test: 
+OP
+0    291
+1    171
+Name: count, dtype: int64
+2024-07-09 16:20:27,318 - INFO - Start the Stage 01 of the Experiment
+2024-07-09 16:20:27,318 - INFO - Compare a baseline models on CV data, sorted by F1
+2024-07-09 16:21:23,717 - INFO - Iterate over the candidate models.
+2024-07-09 16:21:23,717 - INFO - Start working with Extra Trees Classifier
+2024-07-09 16:21:23,717 - INFO - Params:
+ {'bootstrap': False, 'ccp_alpha': 0.0, 'class_weight': None, 'criterion': 'gini', 'max_depth': None, 'max_features': 'sqrt', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'monotonic_cst': None, 'n_estimators': 100, 'n_jobs': -1, 'oob_score': False, 'random_state': 0, 'verbose': 0, 'warm_start': False}
+2024-07-09 16:21:23,717 - INFO - The results using the holdout Data:
+2024-07-09 16:21:24,106 - INFO - Plotting ET
+2024-07-09 16:21:26,380 - INFO - End working with Extra Trees Classifier
+2024-07-09 16:21:26,380 - INFO - Start working with CatBoost Classifier
+2024-07-09 16:21:26,380 - INFO - Params:
+ {'border_count': 254, 'verbose': False, 'task_type': 'CPU', 'random_state': 0}
+2024-07-09 16:21:26,380 - INFO - The results using the holdout Data:
+2024-07-09 16:21:26,707 - INFO - Plotting CB
+2024-07-09 16:21:26,708 - INFO - End working with CatBoost Classifier
+2024-07-09 16:21:26,708 - INFO - Start working with Random Forest Classifier
+2024-07-09 16:21:26,708 - INFO - Params:
+ {'bootstrap': True, 'ccp_alpha': 0.0, 'class_weight': None, 'criterion': 'gini', 'max_depth': None, 'max_features': 'sqrt', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'monotonic_cst': None, 'n_estimators': 100, 'n_jobs': -1, 'oob_score': False, 'random_state': 0, 'verbose': 0, 'warm_start': False}
+2024-07-09 16:21:26,708 - INFO - The results using the holdout Data:
+2024-07-09 16:21:27,082 - INFO - Plotting RF
+2024-07-09 16:21:29,289 - INFO - End working with Random Forest Classifier
+2024-07-09 16:21:29,289 - INFO - Start working with Logistic Regression
+2024-07-09 16:21:29,289 - INFO - Params:
+ {'C': 1.0, 'class_weight': None, 'dual': False, 'fit_intercept': True, 'intercept_scaling': 1, 'l1_ratio': None, 'max_iter': 1000, 'multi_class': 'auto', 'n_jobs': None, 'penalty': 'l2', 'random_state': 0, 'solver': 'lbfgs', 'tol': 0.0001, 'verbose': 0, 'warm_start': False}
+2024-07-09 16:21:29,289 - INFO - The results using the holdout Data:
+2024-07-09 16:21:29,611 - INFO - Plotting LR
+2024-07-09 16:21:31,381 - INFO - End working with Logistic Regression
+2024-07-09 16:21:31,381 - INFO - Start working with Light Gradient Boosting Machine
+2024-07-09 16:21:31,382 - INFO - Params:
+ {'boosting_type': 'gbdt', 'class_weight': None, 'colsample_bytree': 1.0, 'importance_type': 'split', 'learning_rate': 0.1, 'max_depth': -1, 'min_child_samples': 20, 'min_child_weight': 0.001, 'min_split_gain': 0.0, 'n_estimators': 100, 'n_jobs': -1, 'num_leaves': 31, 'objective': None, 'random_state': 0, 'reg_alpha': 0.0, 'reg_lambda': 0.0, 'subsample': 1.0, 'subsample_for_bin': 200000, 'subsample_freq': 0}
+2024-07-09 16:21:31,382 - INFO - The results using the holdout Data:
+2024-07-09 16:21:31,756 - INFO - Plotting LGBM
+2024-07-09 16:21:34,023 - INFO - End working with Light Gradient Boosting Machine
+2024-07-09 16:21:34,024 - INFO - Start working with Extreme Gradient Boosting
+2024-07-09 16:21:34,024 - INFO - Params:
+ {'objective': 'binary:logistic', 'base_score': None, 'booster': 'gbtree', 'callbacks': None, 'colsample_bylevel': None, 'colsample_bynode': None, 'colsample_bytree': None, 'device': 'cpu', 'early_stopping_rounds': None, 'enable_categorical': False, 'eval_metric': None, 'feature_types': None, 'gamma': None, 'grow_policy': None, 'importance_type': None, 'interaction_constraints': None, 'learning_rate': None, 'max_bin': None, 'max_cat_threshold': None, 'max_cat_to_onehot': None, 'max_delta_step': None, 'max_depth': None, 'max_leaves': None, 'min_child_weight': None, 'missing': nan, 'monotone_constraints': None, 'multi_strategy': None, 'n_estimators': None, 'n_jobs': -1, 'num_parallel_tree': None, 'random_state': 0, 'reg_alpha': None, 'reg_lambda': None, 'sampling_method': None, 'scale_pos_weight': None, 'subsample': None, 'tree_method': 'auto', 'validate_parameters': None, 'verbosity': 0}
+2024-07-09 16:21:34,024 - INFO - The results using the holdout Data:
+2024-07-09 16:21:34,449 - INFO - Plotting XGB
+2024-07-09 16:21:36,607 - INFO - End working with Extreme Gradient Boosting
+2024-07-09 16:21:36,607 - INFO - Start working with Gradient Boosting Classifier
+2024-07-09 16:21:36,607 - INFO - Params:
+ {'ccp_alpha': 0.0, 'criterion': 'friedman_mse', 'init': None, 'learning_rate': 0.1, 'loss': 'log_loss', 'max_depth': 3, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 100, 'n_iter_no_change': None, 'random_state': 0, 'subsample': 1.0, 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': 0, 'warm_start': False}
+2024-07-09 16:21:36,607 - INFO - The results using the holdout Data:
+2024-07-09 16:21:36,939 - INFO - Plotting GBC
+2024-07-09 16:21:39,167 - INFO - End working with Gradient Boosting Classifier
+2024-07-09 16:21:39,168 - INFO - Start working with Ridge Classifier
+2024-07-09 16:21:39,168 - INFO - Params:
+ {'alpha': 1.0, 'class_weight': None, 'copy_X': True, 'fit_intercept': True, 'max_iter': None, 'positive': False, 'random_state': 0, 'solver': 'auto', 'tol': 0.0001}
+2024-07-09 16:21:39,168 - INFO - The results using the holdout Data:
+2024-07-09 16:21:39,525 - INFO - Plotting RIDGE
+2024-07-09 16:21:41,443 - INFO - End working with Ridge Classifier
+2024-07-09 16:21:41,443 - INFO - Start working with Linear Discriminant Analysis
+2024-07-09 16:21:41,443 - INFO - Params:
+ {'covariance_estimator': None, 'n_components': None, 'priors': None, 'shrinkage': None, 'solver': 'svd', 'store_covariance': False, 'tol': 0.0001}
+2024-07-09 16:21:41,443 - INFO - The results using the holdout Data:
+2024-07-09 16:21:41,788 - INFO - Plotting LDA
+2024-07-09 16:21:43,564 - INFO - End working with Linear Discriminant Analysis
+2024-07-09 16:21:43,564 - INFO - Start working with Naive Bayes
+2024-07-09 16:21:43,564 - INFO - Params:
+ {'priors': None, 'var_smoothing': 1e-09}
+2024-07-09 16:21:43,564 - INFO - The results using the holdout Data:
+2024-07-09 16:21:43,888 - INFO - Plotting NB
+2024-07-09 16:21:45,598 - INFO - End working with Naive Bayes
+2024-07-09 16:21:45,598 - INFO - Start working with Ada Boost Classifier
+2024-07-09 16:21:45,598 - INFO - Params:
+ {'algorithm': 'SAMME.R', 'estimator': None, 'learning_rate': 1.0, 'n_estimators': 50, 'random_state': 0}
+2024-07-09 16:21:45,598 - INFO - The results using the holdout Data:
+2024-07-09 16:21:45,936 - INFO - Plotting ADA
+2024-07-09 16:21:47,865 - INFO - End working with Ada Boost Classifier
+2024-07-09 16:21:47,865 - INFO - Start working with Decision Tree Classifier
+2024-07-09 16:21:47,865 - INFO - Params:
+ {'ccp_alpha': 0.0, 'class_weight': None, 'criterion': 'gini', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'monotonic_cst': None, 'random_state': 0, 'splitter': 'best'}
+2024-07-09 16:21:47,865 - INFO - The results using the holdout Data:
+2024-07-09 16:21:48,227 - INFO - Plotting DT
+2024-07-09 16:21:49,933 - INFO - End working with Decision Tree Classifier
+2024-07-09 16:21:49,933 - INFO - Start working with SVM - Linear Kernel
+2024-07-09 16:21:49,934 - INFO - Params:
+ {'alpha': 0.0001, 'average': False, 'class_weight': None, 'early_stopping': False, 'epsilon': 0.1, 'eta0': 0.001, 'fit_intercept': True, 'l1_ratio': 0.15, 'learning_rate': 'optimal', 'loss': 'hinge', 'max_iter': 1000, 'n_iter_no_change': 5, 'n_jobs': -1, 'penalty': 'l2', 'power_t': 0.5, 'random_state': 0, 'shuffle': True, 'tol': 0.001, 'validation_fraction': 0.1, 'verbose': 0, 'warm_start': False}
+2024-07-09 16:21:49,934 - INFO - The results using the holdout Data:
+2024-07-09 16:21:50,257 - INFO - Plotting SVM
+2024-07-09 16:21:51,968 - INFO - End working with SVM - Linear Kernel
+2024-07-09 16:21:51,968 - INFO - Start working with K Neighbors Classifier
+2024-07-09 16:21:51,968 - INFO - Params:
+ {'algorithm': 'auto', 'leaf_size': 30, 'metric': 'minkowski', 'metric_params': None, 'n_jobs': -1, 'n_neighbors': 5, 'p': 2, 'weights': 'uniform'}
+2024-07-09 16:21:51,969 - INFO - The results using the holdout Data:
+2024-07-09 16:21:52,498 - INFO - Plotting KNN
+2024-07-09 16:21:54,693 - INFO - End working with K Neighbors Classifier
+2024-07-09 16:21:54,693 - INFO - Start working with Quadratic Discriminant Analysis
+2024-07-09 16:21:54,693 - INFO - Params:
+ {'priors': None, 'reg_param': 0.0, 'store_covariance': False, 'tol': 0.0001}
+2024-07-09 16:21:54,693 - INFO - The results using the holdout Data:
+2024-07-09 16:21:55,051 - INFO - Plotting QDA
+2024-07-09 16:21:57,061 - INFO - End working with Quadratic Discriminant Analysis
+2024-07-09 16:21:57,104 - INFO - Stage 01 of the experiment is completed
+2024-07-09 16:21:57,104 - INFO - Classification pipeline is Completed (Binary - Osteoporosis Risk)
+
+2024-07-09 16:21:57,112 - INFO - Classification pipeline is started (Binary SMOTE - Osteoporosis Risk)
+2024-07-09 16:21:58,092 - INFO - Class distribution after the data preparation stage:
+Train: 
+OP
+1    678
+0    678
+Name: count, dtype: int64
+Test: 
+OP
+0    291
+1    171
+Name: count, dtype: int64
+2024-07-09 16:21:58,092 - INFO - Start the Stage 01 of the Experiment
+2024-07-09 16:21:58,092 - INFO - Compare a baseline models on CV data, sorted by F1
+2024-07-09 16:22:55,957 - INFO - Iterate over the candidate models.
+2024-07-09 16:22:55,957 - INFO - Start working with Extra Trees Classifier
+2024-07-09 16:22:55,957 - INFO - Params:
+ {'bootstrap': False, 'ccp_alpha': 0.0, 'class_weight': None, 'criterion': 'gini', 'max_depth': None, 'max_features': 'sqrt', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'monotonic_cst': None, 'n_estimators': 100, 'n_jobs': -1, 'oob_score': False, 'random_state': 0, 'verbose': 0, 'warm_start': False}
+2024-07-09 16:22:55,957 - INFO - The results using the holdout Data:
+2024-07-09 16:22:56,471 - INFO - Plotting ET
+2024-07-09 16:22:58,712 - INFO - End working with Extra Trees Classifier
+2024-07-09 16:22:58,712 - INFO - Start working with Random Forest Classifier
+2024-07-09 16:22:58,712 - INFO - Params:
+ {'bootstrap': True, 'ccp_alpha': 0.0, 'class_weight': None, 'criterion': 'gini', 'max_depth': None, 'max_features': 'sqrt', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'monotonic_cst': None, 'n_estimators': 100, 'n_jobs': -1, 'oob_score': False, 'random_state': 0, 'verbose': 0, 'warm_start': False}
+2024-07-09 16:22:58,712 - INFO - The results using the holdout Data:
+2024-07-09 16:22:59,248 - INFO - Plotting RF
+2024-07-09 16:23:01,519 - INFO - End working with Random Forest Classifier
+2024-07-09 16:23:01,520 - INFO - Start working with CatBoost Classifier
+2024-07-09 16:23:01,520 - INFO - Params:
+ {'border_count': 254, 'verbose': False, 'task_type': 'CPU', 'random_state': 0}
+2024-07-09 16:23:01,520 - INFO - The results using the holdout Data:
+2024-07-09 16:23:01,960 - INFO - Plotting CB
+2024-07-09 16:23:01,961 - INFO - End working with CatBoost Classifier
+2024-07-09 16:23:01,961 - INFO - Start working with Linear Discriminant Analysis
+2024-07-09 16:23:01,962 - INFO - Params:
+ {'covariance_estimator': None, 'n_components': None, 'priors': None, 'shrinkage': None, 'solver': 'svd', 'store_covariance': False, 'tol': 0.0001}
+2024-07-09 16:23:01,962 - INFO - The results using the holdout Data:
+2024-07-09 16:23:02,398 - INFO - Plotting LDA
+2024-07-09 16:23:04,182 - INFO - End working with Linear Discriminant Analysis
+2024-07-09 16:23:04,182 - INFO - Start working with Ridge Classifier
+2024-07-09 16:23:04,182 - INFO - Params:
+ {'alpha': 1.0, 'class_weight': None, 'copy_X': True, 'fit_intercept': True, 'max_iter': None, 'positive': False, 'random_state': 0, 'solver': 'auto', 'tol': 0.0001}
+2024-07-09 16:23:04,182 - INFO - The results using the holdout Data:
+2024-07-09 16:23:04,600 - INFO - Plotting RIDGE
+2024-07-09 16:23:06,395 - INFO - End working with Ridge Classifier
+2024-07-09 16:23:06,395 - INFO - Start working with Logistic Regression
+2024-07-09 16:23:06,395 - INFO - Params:
+ {'C': 1.0, 'class_weight': None, 'dual': False, 'fit_intercept': True, 'intercept_scaling': 1, 'l1_ratio': None, 'max_iter': 1000, 'multi_class': 'auto', 'n_jobs': None, 'penalty': 'l2', 'random_state': 0, 'solver': 'lbfgs', 'tol': 0.0001, 'verbose': 0, 'warm_start': False}
+2024-07-09 16:23:06,395 - INFO - The results using the holdout Data:
+2024-07-09 16:23:06,837 - INFO - Plotting LR
+2024-07-09 16:23:08,620 - INFO - End working with Logistic Regression
+2024-07-09 16:23:08,620 - INFO - Start working with Gradient Boosting Classifier
+2024-07-09 16:23:08,620 - INFO - Params:
+ {'ccp_alpha': 0.0, 'criterion': 'friedman_mse', 'init': None, 'learning_rate': 0.1, 'loss': 'log_loss', 'max_depth': 3, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 100, 'n_iter_no_change': None, 'random_state': 0, 'subsample': 1.0, 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': 0, 'warm_start': False}
+2024-07-09 16:23:08,620 - INFO - The results using the holdout Data:
+2024-07-09 16:23:09,069 - INFO - Plotting GBC
+2024-07-09 16:23:11,553 - INFO - End working with Gradient Boosting Classifier
+2024-07-09 16:23:11,554 - INFO - Start working with Light Gradient Boosting Machine
+2024-07-09 16:23:11,554 - INFO - Params:
+ {'boosting_type': 'gbdt', 'class_weight': None, 'colsample_bytree': 1.0, 'importance_type': 'split', 'learning_rate': 0.1, 'max_depth': -1, 'min_child_samples': 20, 'min_child_weight': 0.001, 'min_split_gain': 0.0, 'n_estimators': 100, 'n_jobs': -1, 'num_leaves': 31, 'objective': None, 'random_state': 0, 'reg_alpha': 0.0, 'reg_lambda': 0.0, 'subsample': 1.0, 'subsample_for_bin': 200000, 'subsample_freq': 0}
+2024-07-09 16:23:11,554 - INFO - The results using the holdout Data:
+2024-07-09 16:23:12,001 - INFO - Plotting LGBM
+2024-07-09 16:23:14,179 - INFO - End working with Light Gradient Boosting Machine
+2024-07-09 16:23:14,179 - INFO - Start working with Naive Bayes
+2024-07-09 16:23:14,179 - INFO - Params:
+ {'priors': None, 'var_smoothing': 1e-09}
+2024-07-09 16:23:14,179 - INFO - The results using the holdout Data:
+2024-07-09 16:23:14,597 - INFO - Plotting NB
+2024-07-09 16:23:16,347 - INFO - End working with Naive Bayes
+2024-07-09 16:23:16,347 - INFO - Start working with Extreme Gradient Boosting
+2024-07-09 16:23:16,347 - INFO - Params:
+ {'objective': 'binary:logistic', 'base_score': None, 'booster': 'gbtree', 'callbacks': None, 'colsample_bylevel': None, 'colsample_bynode': None, 'colsample_bytree': None, 'device': 'cpu', 'early_stopping_rounds': None, 'enable_categorical': False, 'eval_metric': None, 'feature_types': None, 'gamma': None, 'grow_policy': None, 'importance_type': None, 'interaction_constraints': None, 'learning_rate': None, 'max_bin': None, 'max_cat_threshold': None, 'max_cat_to_onehot': None, 'max_delta_step': None, 'max_depth': None, 'max_leaves': None, 'min_child_weight': None, 'missing': nan, 'monotone_constraints': None, 'multi_strategy': None, 'n_estimators': None, 'n_jobs': -1, 'num_parallel_tree': None, 'random_state': 0, 'reg_alpha': None, 'reg_lambda': None, 'sampling_method': None, 'scale_pos_weight': None, 'subsample': None, 'tree_method': 'auto', 'validate_parameters': None, 'verbosity': 0}
+2024-07-09 16:23:16,347 - INFO - The results using the holdout Data:
+2024-07-09 16:23:16,860 - INFO - Plotting XGB
+2024-07-09 16:23:19,022 - INFO - End working with Extreme Gradient Boosting
+2024-07-09 16:23:19,022 - INFO - Start working with Ada Boost Classifier
+2024-07-09 16:23:19,022 - INFO - Params:
+ {'algorithm': 'SAMME.R', 'estimator': None, 'learning_rate': 1.0, 'n_estimators': 50, 'random_state': 0}
+2024-07-09 16:23:19,022 - INFO - The results using the holdout Data:
+2024-07-09 16:23:19,452 - INFO - Plotting ADA
+2024-07-09 16:23:21,444 - INFO - End working with Ada Boost Classifier
+2024-07-09 16:23:21,444 - INFO - Start working with K Neighbors Classifier
+2024-07-09 16:23:21,444 - INFO - Params:
+ {'algorithm': 'auto', 'leaf_size': 30, 'metric': 'minkowski', 'metric_params': None, 'n_jobs': -1, 'n_neighbors': 5, 'p': 2, 'weights': 'uniform'}
+2024-07-09 16:23:21,444 - INFO - The results using the holdout Data:
+2024-07-09 16:23:22,047 - INFO - Plotting KNN
+2024-07-09 16:23:24,238 - INFO - End working with K Neighbors Classifier
+2024-07-09 16:23:24,238 - INFO - Start working with Decision Tree Classifier
+2024-07-09 16:23:24,238 - INFO - Params:
+ {'ccp_alpha': 0.0, 'class_weight': None, 'criterion': 'gini', 'max_depth': None, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_samples_leaf': 1, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'monotonic_cst': None, 'random_state': 0, 'splitter': 'best'}
+2024-07-09 16:23:24,238 - INFO - The results using the holdout Data:
+2024-07-09 16:23:24,664 - INFO - Plotting DT
+2024-07-09 16:23:26,402 - INFO - End working with Decision Tree Classifier
+2024-07-09 16:23:26,403 - INFO - Start working with SVM - Linear Kernel
+2024-07-09 16:23:26,403 - INFO - Params:
+ {'alpha': 0.0001, 'average': False, 'class_weight': None, 'early_stopping': False, 'epsilon': 0.1, 'eta0': 0.001, 'fit_intercept': True, 'l1_ratio': 0.15, 'learning_rate': 'optimal', 'loss': 'hinge', 'max_iter': 1000, 'n_iter_no_change': 5, 'n_jobs': -1, 'penalty': 'l2', 'power_t': 0.5, 'random_state': 0, 'shuffle': True, 'tol': 0.001, 'validation_fraction': 0.1, 'verbose': 0, 'warm_start': False}
+2024-07-09 16:23:26,403 - INFO - The results using the holdout Data:
+2024-07-09 16:23:26,819 - INFO - Plotting SVM
+2024-07-09 16:23:28,567 - INFO - End working with SVM - Linear Kernel
+2024-07-09 16:23:28,568 - INFO - Start working with Quadratic Discriminant Analysis
+2024-07-09 16:23:28,568 - INFO - Params:
+ {'priors': None, 'reg_param': 0.0, 'store_covariance': False, 'tol': 0.0001}
+2024-07-09 16:23:28,568 - INFO - The results using the holdout Data:
+2024-07-09 16:23:29,027 - INFO - Plotting QDA
+2024-07-09 16:23:31,058 - INFO - End working with Quadratic Discriminant Analysis
+2024-07-09 16:23:31,089 - INFO - Stage 01 of the experiment is completed
+2024-07-09 16:23:31,089 - INFO - Classification pipeline is Completed (Binary SMOTE - Osteoporosis Risk)
+
