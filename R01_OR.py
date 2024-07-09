@@ -53,9 +53,14 @@ def get_model_acronym(model_index):
 
 def plot_model(fix_imbalance, X_train, y_train, X_test, y_test, model, figs_path, model_index, title):
     logging.info(f'Plotting {model_index}')
-    # To copy the original model
-    from sklearn.base import clone
-    _model = clone(model)
+
+    if model_index=='CB':
+        from yellowbrick.contrib.wrapper import wrap, CLASSIFIER
+        _model = wrap(model, CLASSIFIER)
+    else:
+        # To copy the original model
+        from sklearn.base import clone
+        _model = clone(model)
 
     # Set up the default plotting settings
     import seaborn as sns
@@ -104,7 +109,7 @@ def plot_model(fix_imbalance, X_train, y_train, X_test, y_test, model, figs_path
 
     try:
         from yellowbrick.classifier import ConfusionMatrix
-        visualizer = ConfusionMatrix(_model, title=title)
+        visualizer = ConfusionMatrix(_model, title=title, cmap='RdYlGn')
         visualizer.fit(X_train, y_train)  # Fit the training data to the visualizer
         visualizer.score(X_test, y_test)  # Evaluate the model on the test data
         visualizer.show(outpath=f'{figs_path}/{fix_imbalance}_{model_index}_ConfusionMatrix.png',
